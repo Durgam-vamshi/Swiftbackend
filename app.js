@@ -13,6 +13,10 @@ app.use(express.json());
         const db = await connectDB(); 
         app.locals.db = db; 
 
+        app.get("/", (req, res) => {
+            res.send("Hi, I am Vamshi. This is my Node.js project for Swift backend.");
+        });
+
         app.use("/api", userRoutes);
 
         const PORT = process.env.PORT || 5000;
